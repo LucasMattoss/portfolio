@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'segoe ui', tahoma, geneva, verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --cor-primaria: #4f46e5;
+    --cor-secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.05);
+    --borda-vidro: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    background-color: var(--maisEscuro);
+    color: var(--claro);
+    min-height: 100vh;
+}
+
+/* Navbar Padrão do seu Portfólio */
+.navegacao {
+    position: fixed;
+    top: 0;
+    background-color: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+}
+
+.menu-link {
+    color: var(--claro);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-image: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));  
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+.botao-tema {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--claro);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 2rem;
+}
+
+.botao-tema:hover {
+    background: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    color: #fff;
+}
+
+/* Estrutura do Layout Grid */
+.contato-container {
+    padding: 8rem 2rem 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-contato {
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitulo-contato {
+    text-align: center;
+    color: var(--claro);
+    opacity: 0.8;
+    margin-bottom: 3rem;
+}
+
+.grid-contato {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Estilização dos Cards Sociais (Baseado nos Certificados) */
+.coluna-redes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-social {
+    background: var(--vidro);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--borda-vidro);
+    border-left: 4px solid var(--cor-primaria);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--claro);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card-social.linkedin { border-left-color: #0077b5; }
+.card-social.github { border-left-color: #6e5494; }
+.card-social.gmail { border-left-color: #ea4335; }
+
+.card-social:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+    transform: translateY(-5px) scale(1.02);
+}
+
+.card-social h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    margin-top: 5px;
+}
+
+.card-social p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+.badge-rede {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Card do Formulário */
+.card-formulario {
+    background: var(--vidro);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--borda-vidro);
+    padding: 2.5rem;
+}
+
+.card-formulario h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--claro);
+}
+
+#formulario-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.grupo-input label {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.grupo-input input,
+.grupo-input textarea {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--borda-vidro);
+    border-radius: 8px;
+    padding: 0.9rem;
+    color: var(--claro);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.grupo-input input:focus,
+.grupo-input textarea:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 8px rgba(79, 70, 229, 0.4);
+}
+
+.botao-enviar {
+    background-image: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.botao-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(79, 70, 229, 0.4);
+}
+
+/* --- SUPORTE AO MODO CLARO --- */
+body.modo-claro {
+    --maisEscuro: #f8fafc;
+    --escuro: #cbd5e1;
+    --claro: #0f172a;
+    --vidro: rgba(15, 23, 42, 0.05);
+    --borda-vidro: rgba(15, 23, 42, 0.1);
+}
+
+body.modo-claro .badge-rede {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+body.modo-claro .grupo-input input,
+body.modo-claro .grupo-input textarea {
+    background: rgba(255, 255, 255, 0.7);
+}

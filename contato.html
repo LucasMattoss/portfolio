@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Portfólio</title>
+    <link rel="stylesheet" href="style-contato.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navegacao">
+        <button id="botao-tema" class="botao-tema"> Modo Claro</button>
+         <ul class="menu">
+            <li><a href="index.html#inicio" class="menu-link">Início</a></li>
+            <li><a href="index.html#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="index.html#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="competencias.html" class="menu-link">Competências</a></li>
+            <li><a href="contato.html" class="menu-link">Contato</a></li>
+         </ul>
+    </nav>
+
+    <main class="contato-container">
+        <section class="secao-interna">
+            <h1 class="titulo-contato">Vamos conversar?</h1>
+            <p class="subtitulo-contato">Escolha uma das minhas redes ou envie uma mensagem direta pelo formulário.</p>
+            
+            <div class="grid-contato">
+                <div class="coluna-redes">
+                    <a href="https://www.linkedin.com/in/lucasmattoss" target="_blank" class="card-social linkedin">
+                        <div class="badge-rede">Profissional</div>
+                        <h2>LinkedIn</h2>
+                        <p>Conecte-se comigo, acompanhe minhas atualizações e veja meus posts.</p>
+                    </a>
+
+                    <a href="https://github.com/lucasmattoss" target="_blank" class="card-social github">
+                        <div class="badge-rede">Código</div>
+                        <h2>GitHub</h2>
+                        <p>Explore meus repositórios, projetos paralelos e contribuições.</p>
+                    </a>
+
+                    <a href="mailto:lucasmattos2311@gmail.com" class="card-social gmail">
+                        <div class="badge-rede">E-mail</div>
+                        <h2>Gmail</h2>
+                        <p>Me mande um e-mail direto para propostas, dúvidas ou insights.</p>
+                    </a>
+                </div>
+
+                <div class="card-formulario">
+                    <h3>Enviar Mensagem</h3>
+                    <form id="formulario-contato">
+                        <div class="grupo-input">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                        </div>
+                        
+                        <div class="grupo-input">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="@gmail.com" required>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como posso te ajudar?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="botao-enviar">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
