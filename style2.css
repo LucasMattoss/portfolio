@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'segoe ui', tahoma, geneva, verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --cor-primaria: #4f46e5;
+    --cor-secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    background-color: var(--maisEscuro);
+    color: var(--claro);
+}
+
+.navegacao {
+    position: fixed;
+    top: 0;
+    background-color: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem 1.5rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+}
+
+.menu-link {
+    color: var(--claro);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-image: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));  
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+.cabecalho {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.competencias-container {
+    padding: 8rem 2rem 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.secao-interna {
+    margin-bottom: 5rem;
+}
+
+.titulo-competencias {
+    font-size: 3rem;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 50px;
+}
+.grid-competencias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card-competencia {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-competencia:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.5);
+    transform: translateY(-10px) scale(1.03);
+}
+
+.badge-tecnologia {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    background-image: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+    color: var(--claro);
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card-competencia h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--claro);
+}
+
+.card-competencia p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--claro);
+    opacity: 0.8;
+}
+
+.grid-certificados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+
+.card-certificado {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    border-left: 4px solid var(--cor-primaria);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-certificado:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.5);
+    transform: translateY(-10px) scale(1.03);
+}
+
+.card-certificado h3 {
+    font-size: 1.3rem;
+    color: var(--claro);
+    margin-bottom: 8px;
+}
+
+.card-certificado .instituicao {
+    color: var(--cor-secundaria);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.rodape-certificado {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--claro);
+    opacity: 0.6;
+    border-top: 1px solid var(--vidro);
+    padding-top: 15px;
+}
+.botao-tema {
+    background: var(--vidro);
+    color: var(--claro);
+    border: 1px solid var(--vidro);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+body.modo-claro {
+    --maisEscuro: #f8fafc;
+    --escuro: #cbd5e1;
+    --claro: #0f172a;
+    --vidro: rgba(15, 23, 42, 0.1);
+}
