@@ -45,7 +45,7 @@ body {
 }
 
 .menu-link {
-    color: var(--claro);
+    color: rgba(226, 232, 240, 0.9);
     text-decoration: none;
     font-weight: 500;
     position: relative;
@@ -178,7 +178,7 @@ h1 {
 .info-projetos {
     font-size: 1.4rem;
     margin-bottom: 0.75rem;
-    color: #fff;
+    color: var(--claro);
 }
 
 .paragrafo-projetos {
